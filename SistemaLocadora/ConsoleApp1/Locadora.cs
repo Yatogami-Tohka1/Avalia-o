@@ -16,6 +16,12 @@ namespace ConsoleApp1
         public List<VeiculoAluguel> VeiculosAluguel { get => _VeiculosAluguel; set => _VeiculosAluguel = value; }
         public List<Aluguel> AlugueisAtuais { get => _AlugueisAtuais; set => _AlugueisAtuais = value; }
 
+        public Locadora (string nome, string endereço)
+        {
+            Nome = nome;
+            Endereço = endereço;
+        }
+
         public void AdicionarVeiculoAluguel (VeiculoAluguel a)
         {
 

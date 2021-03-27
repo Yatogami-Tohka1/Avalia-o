@@ -12,7 +12,7 @@ namespace ConsoleApp1
             MostrarMenu();
         }
        
-        Locadora Locadora = new Locadora();
+        Locadora LocadoraCentro = new Locadora("Locadora do Centro", "Avenida dos aviadores N°89");
         Cliente Cliente = new Cliente();
         
         
@@ -33,6 +33,36 @@ namespace ConsoleApp1
                 "10 - Listar Alugueis\n" +
                 "11 - ListarAlugueisCliente\n" +
                 "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+            int op = int.Parse(Console.ReadLine());
+
+            switch(op)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                default:
+                    break;
+            }
         }
         public static void CriarLocadora()
         {
