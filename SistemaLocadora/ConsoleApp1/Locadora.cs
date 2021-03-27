@@ -24,10 +24,17 @@ namespace ConsoleApp1
         {
             return true;
         }
-        public bool EfetuarAluguel(Veiculo v, Cliente c)
+        public bool EfetuarAluguel(VeiculoAluguel v, Cliente c)
         {
             return true;
         }
+        public float FinalizarAluguel(Aluguel a)
+        {
+            return 1.0f;
+        }
+
+        
+
 
 
 

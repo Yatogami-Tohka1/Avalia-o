@@ -6,6 +6,6 @@ namespace ConsoleApp1
 {
     class Aluguel
     {
-        Veiculo = VeiculoAluguel;
+
     }
 }
