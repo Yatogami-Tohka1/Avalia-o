@@ -40,7 +40,7 @@ namespace ConsoleApp1
         float _quilometragem;
 
         public string Placa { get => _placa; private set => _placa = value; }
-        public float Quilometragem { get => _quilometragem; private set => _quilometragem = value; }
+        public float Quilometragem { get => _quilometragem; set => _quilometragem = value; }
 
         public Carro(string placa, float quilometragem)
         {
