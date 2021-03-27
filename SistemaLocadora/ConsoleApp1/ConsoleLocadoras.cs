@@ -11,7 +11,7 @@ namespace ConsoleApp1
         {
             MostrarMenu();
         }
-       
+       //TESTE
         Locadora LocadoraCentro = new Locadora("Locadora do Centro", "Avenida dos aviadores N°89");
         Cliente Cliente = new Cliente();
         
