@@ -5,11 +5,11 @@ namespace ConsoleApp1
 {
     class RedeLocadoras
     {
-        private string _nome;
+        private static string _nome;
         private List<Cliente> _clientes = new List<Cliente>();
         private static List<Locadora> _locadoras = new List<Locadora>();
 
-        public string Nome { get => _nome; set => _nome = value; }
+        public static string  Nome { get => _nome; set => _nome = value; }
         public static List<Locadora> Locadoras { get => _locadoras; private set => _locadoras = value; }
         public List<Cliente> Clientes { get => _clientes; private set => _clientes = value; }
 
@@ -17,9 +17,17 @@ namespace ConsoleApp1
         {
             Locadoras.Add(loc);
         }
-        public static bool RemoverLocadora(Locadora loc)
-        {           
-            return true;
+        public static bool RemoverLocadora(string Nome)
+        {
+            foreach(Locadora loc in Locadoras)
+            {
+                if(loc.Nome.Equals(Nome))
+                {
+                    Locadoras.Remove(loc);
+                    return true;
+                }
+            }            
+            return false;
         }
         public void AdicionarCliente(Cliente c)
         {
@@ -27,9 +35,22 @@ namespace ConsoleApp1
         }
         public static void ListarLocadoras()
         {
-            foreach(Locadora loc in Locadoras)
+            if (Locadoras.Count == 0)
             {
-                Console.WriteLine($"Nome: {loc.Nome} | Endereço: {loc.Endereço}");
+                Console.WriteLine("");
+                Console.WriteLine("Voce ainda não adicionou nenhuma locadora");
+                Console.WriteLine("");
+            }
+            else
+            {
+                Console.WriteLine("");
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                foreach (Locadora loc in Locadoras)
+                {
+                    Console.WriteLine($"Nome: {loc.Nome} | Endereço: {loc.Endereço}");
+                }
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                Console.WriteLine("");
             }
         }
     }

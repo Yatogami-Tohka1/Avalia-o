@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class VeiculoAluguel
+    class VeiculoAluguel : Carro, Avião
     {
         public VeiculoAluguel(string id, string marca, string modelo, bool alugado)
         {
@@ -13,6 +13,8 @@ namespace ConsoleApp1
             Modelo = modelo;
             Alugado = alugado;
         }
+
+
 
         private string _id;
         private string _marca;

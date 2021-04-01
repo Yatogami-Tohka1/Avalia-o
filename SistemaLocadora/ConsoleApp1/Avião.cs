@@ -9,12 +9,5 @@ namespace ConsoleApp1
         private float _horasVoo;
 
         public float HorasVoo { get => _horasVoo; set => _horasVoo = value; }
-
-        public Avião(float horasVoo)
-        {
-            HorasVoo = horasVoo;
-        }
-
-
     }
 }

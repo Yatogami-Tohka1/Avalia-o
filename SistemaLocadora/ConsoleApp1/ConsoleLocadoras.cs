@@ -7,18 +7,11 @@ namespace ConsoleApp1
 
     class ConsoleLocadoras
     {
-       public static void Main()
+        public static string LocadoraSelecionada = "";
+        public static void Main()
         {
             int c = 0;
-            Carro FordHXJ1727 = new Carro("HXJ-1727", 0);
-            Carro ToyotaHLD7129 = new Carro("HLD-7129", 2000);
-            Carro AudiHZE8769 = new Carro("HZE-8769", 30000);
-            Carro ChevroletHQN1388 = new Carro("HQN-1388", 10000);
-            Carro HondaJIV0767 = new Carro("JIV-0767", 3000);
-
-            Avião Boeing747 = new Avião(3000);
-            Avião Jato = new Avião(10000);
-            Avião Ultrassônico = new Avião(100);
+            RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Centro", "Rua Guaporé 789"));
             while (c == 0)
             {
                 MostrarMenu();
@@ -28,6 +21,7 @@ namespace ConsoleApp1
         
        public static void MostrarMenu()
         {
+            Console.WriteLine("");
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n " +
                 "      Sistema de Locadoras\n " +
                 "\n" +
@@ -83,6 +77,7 @@ namespace ConsoleApp1
         }
         public static void CriarLocadora()
         {
+            Console.WriteLine("");
             Console.WriteLine("Adicionando locadora...\n" +
             "Insira o nome da sua locadora:");
             string n = Console.ReadLine();
@@ -99,14 +94,36 @@ namespace ConsoleApp1
         {
             RedeLocadoras.ListarLocadoras();
             Console.WriteLine("Qual locadora voce deseja remover?");
+            string Remover = Console.ReadLine();
+            if(RedeLocadoras.RemoverLocadora(Remover))
+            {
+                Console.WriteLine($"{Remover} removida com sucesso");
+            }
+            else
+            {
+                Console.WriteLine($"Não foi possivel encontrar a locadora {Remover}");
+            }
+            
         }
         public static void SelecionarLocadora()
         {
-
+            Console.WriteLine("");
+            RedeLocadoras.ListarLocadoras();
+            Console.WriteLine(" \n" +
+                "Qual locadora voce desejar selecionar?");
+            string Selecionar = Console.ReadLine();
+            foreach(Locadora loc in RedeLocadoras.Locadoras)
+            {
+                if(loc.Nome.Equals(Selecionar))
+                { 
+                    LocadoraSelecionada = loc.Nome;
+                }
+            }
+            Console.WriteLine($"{Selecionar} foi selecionada!");
         }
         public static void ListarVeiculosDisponíveis(Locadora loc)
         {
-
+            foreach
         }
         public static void ListaAviõesDisponíveis(Locadora loc)
         {
