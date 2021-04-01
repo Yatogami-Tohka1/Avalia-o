@@ -9,11 +9,21 @@ namespace ConsoleApp1
     {
        public static void Main()
         {
-            MostrarMenu();
+            int c = 0;
+            Carro FordHXJ1727 = new Carro("HXJ-1727", 0);
+            Carro ToyotaHLD7129 = new Carro("HLD-7129", 2000);
+            Carro AudiHZE8769 = new Carro("HZE-8769", 30000);
+            Carro ChevroletHQN1388 = new Carro("HQN-1388", 10000);
+            Carro HondaJIV0767 = new Carro("JIV-0767", 3000);
+
+            Avião Boeing747 = new Avião(3000);
+            Avião Jato = new Avião(10000);
+            Avião Ultrassônico = new Avião(100);
+            while (c == 0)
+            {
+                MostrarMenu();
+            }           
         }
-       //TESTE
-        Locadora LocadoraCentro = new Locadora("Locadora do Centro", "Avenida dos aviadores N°89");
-        Cliente Cliente = new Cliente();
         
         
        public static void MostrarMenu()
@@ -23,15 +33,16 @@ namespace ConsoleApp1
                 "\n" +
                 "1 - Criar Locadora \n" +
                 "2 - Remover Locadora\n" +
-                "3 - SelecionarLocadora\n" +
-                "4 - ListarVeiculosDisponiveis\n" +
-                "5 - ListarCarrosDisponíveis\n" +
-                "6 - ListarAviõesDisponíveis\n" +
-                "7 - ListarTodosOsVeiculo\n" +
-                "8 - CadastrarCliente\n" +
-                "9 - DevolverVeículo\n" +
-                "10 - Listar Alugueis\n" +
-                "11 - ListarAlugueisCliente\n" +
+                "3 - Listar Locadoras\n" +
+                "4 - SelecionarLocadora\n" +
+                "5 - ListarVeiculosDisponiveis\n" +
+                "6 - ListarCarrosDisponíveis\n" +
+                "7 - ListarAviõesDisponíveis\n" +
+                "8 - ListarTodosOsVeiculo\n" +
+                "9 - CadastrarCliente\n" +
+                "10 - DevolverVeículo\n" +
+                "11 - Listar Alugueis\n" +
+                "12 - ListarAlugueisCliente\n" +
                 "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
             int op = int.Parse(Console.ReadLine());
@@ -39,12 +50,16 @@ namespace ConsoleApp1
             switch(op)
             {
                 case 1:
+                    CriarLocadora();
                     break;
                 case 2:
+                    RemoverLocadora();
                     break;
                 case 3:
+                    ListarLocadoras();
                     break;
                 case 4:
+                    SelecionarLocadora();
                     break;
                 case 5:
                     break;
@@ -60,17 +75,30 @@ namespace ConsoleApp1
                     break;
                 case 11:
                     break;
+                case 12:
+                    break;
                 default:
                     break;
             }
         }
         public static void CriarLocadora()
         {
-
+            Console.WriteLine("Adicionando locadora...\n" +
+            "Insira o nome da sua locadora:");
+            string n = Console.ReadLine();
+            Console.WriteLine("Insira o endereço da locadora " + n);
+            string e = Console.ReadLine();
+            RedeLocadoras.AdicionarLocadora(new Locadora(n, e));
+            Console.WriteLine($"Locadora {n} foi adicionada com sucesso");
+        }
+        public static void ListarLocadoras()
+        {
+            RedeLocadoras.ListarLocadoras();
         }
         public static void RemoverLocadora()
         {
-
+            RedeLocadoras.ListarLocadoras();
+            Console.WriteLine("Qual locadora voce deseja remover?");
         }
         public static void SelecionarLocadora()
         {

@@ -8,8 +8,8 @@ namespace ConsoleApp1
     {
         private string _nome;
         private string _endereço;
-        private List<VeiculoAluguel> _VeiculosAluguel;
-        private List<Aluguel> _AlugueisAtuais;
+        private List<VeiculoAluguel> _VeiculosAluguel = new List<VeiculoAluguel>();
+        private List<Aluguel> _AlugueisAtuais = new List<Aluguel>();
 
         public string Endereço { get => _endereço; set => _endereço = value; }
         public string Nome { get => _nome; set => _nome = value; }

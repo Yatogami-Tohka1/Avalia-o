@@ -13,5 +13,10 @@ namespace ConsoleApp1
         public string Nome { get => _nome; set => _nome = value; }
         public string Cpf { get => _cpf; set => _cpf = value; }
         public List<Aluguel> Alugueis { get => _alugueis; set => _alugueis = value; }
+
+        public bool Alugar(VeiculoAluguel v)
+        {
+            return true;
+        }
     }
 }
