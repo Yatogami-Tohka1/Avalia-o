@@ -7,7 +7,8 @@ namespace ConsoleApp1
 
     class ConsoleLocadoras
     {
-        public static string LocadoraSelecionada = "";
+        public static int IdCarros = 13;
+        public static string LocadoraSelecionada = "Locadora Centro";
         public static string ClienteSelecionado = "";
         public static string VeiculoSelecionado = "";
         public static void Main()
@@ -23,26 +24,26 @@ namespace ConsoleApp1
             {
                 if(loc.Nome == "Locadora Centro")
                 {
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1575", "Locadora Centro", "Carro", 0, "NBJ-4189", 15000, "Ford", "Fusion", false));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1576", "Locadora Centro", "Carro", 0, "MZI-4665", 40000, "BMW", "I8", false));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1577", "Locadora Centro", "Carro", 0, "MNI-9344", 30000, "Porsche", "Panamera", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1", "Locadora Centro", "Carro", 0, "NBJ-4189", 15000, "Ford", "Fusion", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("2", "Locadora Centro", "Carro", 0, "MZI-4665", 40000, "BMW", "I8", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("3", "Locadora Centro", "Carro", 0, "MNI-9344", 30000, "Porsche", "Panamera", true));
 
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1578", "Locadora Centro", "Avião", 1000, "", 0, "Boeing", "747", false));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1579", "Locadora Centro", "Avião", 1200, "", 0, "Boeing", "787", true));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1580", "Locadora Centro", "Avião", 8000, "", 0, "Airbus", "A320", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("4", "Locadora Centro", "Avião", 1000, "", 0, "Boeing", "747", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("5", "Locadora Centro", "Avião", 1200, "", 0, "Boeing", "787", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("6", "Locadora Centro", "Avião", 8000, "", 0, "Airbus", "A320", false));
                 }
             }
             foreach (Locadora loc in RedeLocadoras.Locadoras)
             {
                 if (loc.Nome == "Locadora Yvete Dias")
                 {
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1581", "Locadora Yvete Dias", "Carro", 0, "JKL-6086", 10000, "Hyundai", "Veloster", false));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1582", "Locadora Yvete Dias", "Carro", 0, "KZJ-5452", 280000, "Wolkswagem", "Gol Mexido", true));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1583", "Locadora Yvete Dias", "Carro", 0, "HVW-9099", 36000, "Wolkswagem", "Savero Rebaixada", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("7", "Locadora Yvete Dias", "Carro", 0, "JKL-6086", 10000, "Hyundai", "Veloster", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("8", "Locadora Yvete Dias", "Carro", 0, "KZJ-5452", 280000, "Wolkswagem", "Gol Mexido", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("9", "Locadora Yvete Dias", "Carro", 0, "HVW-9099", 36000, "Wolkswagem", "Savero Rebaixada", true));
 
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1584", "Locadora Yvete Dias", "Avião", 1400, "", 0, "Boeing", "737", true));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1585", "Locadora Yvete Dias", "Avião", 1800, "", 0, "Boeing", "720", true));
-                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("1586", "Locadora Yvete Dias", "Avião", 16000, "", 0, "Airbus", "A319", false));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("10", "Locadora Yvete Dias", "Avião", 1400, "", 0, "Boeing", "737", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("11", "Locadora Yvete Dias", "Avião", 1800, "", 0, "Boeing", "720", true));
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel("12", "Locadora Yvete Dias", "Avião", 16000, "", 0, "Airbus", "A319", false));
                 }
             }               
             while (c == 0)
@@ -66,19 +67,20 @@ namespace ConsoleApp1
                 "3 - Listar Locadoras\n" +
                 "4 - Selecionar Locadora\n" +
                 "\n" +
-                "5 - Listar Veiculos Disponiveis\n" +
-                "6 - Listar Carros Disponíveis\n" +
-                "7 - Listar Aviões Disponíveis\n" +
-                "8 - Listar Todos Os Veiculo\n" +
+                $"5 - Adicionar veículo: {LocadoraSelecionada}\n" +              
+                "6 - Listar Veiculos Disponiveis\n" +
+                "7 - Listar Carros Disponíveis\n" +
+                "8 - Listar Aviões Disponíveis\n" +
+                "9 - Listar Todos Os Veiculo\n" +
                 "\n" +
-                "9 - Cadastrar Cliente\n" +
-                "10 - Listar Clientes\n" +
-                "11 - Selecionar Cliente\n" +
+                "10 - Cadastrar Cliente\n" +
+                "11 - Listar Clientes\n" +
+                "12 - Selecionar Cliente\n" +
                 "\n" +
-                "12 - Iniciar Aluguel\n" +
-                "13 - Devolver Veículo\n" +
-                "14 - Listar Alugueis\n" +
-                "15 - ListarAlugueisCliente\n" +
+                "13 - Iniciar Aluguel\n" +
+                "14 - Devolver Veículo\n" +
+                "15 - Listar Alugueis\n" +
+                "16 - ListarAlugueisCliente\n" +
                 "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
             int op = int.Parse(Console.ReadLine());
@@ -98,36 +100,39 @@ namespace ConsoleApp1
                     SelecionarLocadora();
                     break;
                 case 5:
-                    ListarVeiculosDisponíveis();
+                    AdicionarVeiculo();
                     break;
                 case 6:
-                    ListarCarrosDisponíveis();
+                    ListarVeiculosDisponíveis();
                     break;
                 case 7:
-                    ListaAviõesDisponíveis();
+                    ListarCarrosDisponíveis();
                     break;
                 case 8:
-                    ListarTodosOsVeiculos();
+                    ListaAviõesDisponíveis();
                     break;
                 case 9:
-                    CadastrarCliente();
+                    ListarTodosOsVeiculos();
                     break;
                 case 10:
-                    ListarClientes();
+                    CadastrarCliente();
                     break;
                 case 11:
-                    SelecionarCliente();
+                    ListarClientes();
                     break;
                 case 12:
-                    IniciarAluguel();
+                    SelecionarCliente();
                     break;
                 case 13:
-                    DevolverVeiculo();
+                    IniciarAluguel();
                     break;
                 case 14:
-                    ListarAlugueis();
+                    DevolverVeiculo();
                     break;
                 case 15:
+                    ListarAlugueis();
+                    break;
+                case 16:
                     AluguelPorCliente();
                     break;
                 default:
@@ -447,31 +452,91 @@ namespace ConsoleApp1
             ListarClientes();            
             Console.WriteLine("Qual dos clientes deseja listar os alugueis?");
             string selecionado = Console.ReadLine();
+            int qnt = 0;
             bool encontrado = false;
-                    encontrado = true;
                     foreach(Aluguel a in Locadora.AlugueisAtuais)
                     {
                         if(a.Cliente.Equals(selecionado))
                         {
                                 encontrado = true;
-                                Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n" +
-                                $"Aluguel ID: {a.Id}\n" +
-                                $"Alugado por: {a.Cliente}\n" +
-                                $"Locado por {a.Locadora}\n" +
-                                $" \n" +
-                                $"Inicio: {a.Inicio}\n" +
-                                $"Devolução: {a.Final}\n" +
-                                $"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");                                
+                    Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n" +
+                    $"Aluguel ID: {a.Id}\n" +
+                    $"Alugado por: {a.Cliente}\n" +
+                    $"Locado por {a.Locadora}\n" +
+                    $" \n" +
+                    $"Inicio: {a.Inicio}\n" +
+                    $"Devolução: {a.Final}\n" +
+                    $"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                    qnt++; 
                         }
                     }
                 
-            
+
             if(encontrado == false)
             {
                 Console.WriteLine($"{selecionado} não foi encontrado na base de dados");
+                return;
+            }
+            if (qnt == 0)
+            {
+                Console.WriteLine($" \n" +
+                    $"Não foi encontrado nenhum aluguel ativo para {selecionado}");
+
             }
         }
+        public static void AdicionarVeiculo()
+        {
+            if (LocadoraSelecionada == "")
+            {
+                Console.WriteLine("Selecione uma locadora primeiro");
+                return;
+            }
+            string Placa = "";
+            float Quilometragem = 0;
+            float HorasVoo = 0;
+            string TipoReal = "";
+            Console.WriteLine($"Adicionando veículo a {LocadoraSelecionada}...\n" +
+                "Qual o tipo do veículo? (Carro/Aviao)");
+            Tipo:
+            string Tipo = Console.ReadLine();
+            if(Tipo != "Carro" && Tipo != "Aviao")
+            {
+                Console.WriteLine("Insira um tipo válido! (Carro/Aviao)");
+                goto Tipo;
+            }
+            if(Tipo == "Carro")
+            {
+                Console.WriteLine("Qual a placa do carro?");
+                Placa = Console.ReadLine();
+                Console.WriteLine("Qual a quilometragem do carro?");
+                Quilometragem = float.Parse(Console.ReadLine());
+                TipoReal = "Carro";
+            }
+            if(Tipo == "Aviao")
+            {
+                Console.WriteLine("Quantas horas de voo o avião tem?");
+                HorasVoo = float.Parse(Console.ReadLine());
+                TipoReal = "Avião";
+
+            }
+
+            Console.WriteLine("Qual a marca do veículo?");
+            string Marca = Console.ReadLine();
+
+            Console.WriteLine("Qual o modelo do veículo?");
+            string Modelo = Console.ReadLine();
+
+            foreach(Locadora loc in RedeLocadoras.Locadoras)
+            {
+                if(loc.Nome.Equals(LocadoraSelecionada))
+                {
+                    loc.AdicionarVeiculoAluguel(new VeiculoAluguel(IdCarros.ToString(), LocadoraSelecionada, TipoReal, HorasVoo, Placa, Quilometragem, Marca, Modelo, false));
+                    IdCarros += 1;
+                }
+            }
+
         }
+    }
 
 
     }
