@@ -25,22 +25,26 @@ namespace ConsoleApp1
         public static void ListarTodosOsVeículos(string Locadora)
         {
             Console.WriteLine("");
+            Console.WriteLine($"Todos os veículos em {Locadora}");
             Console.WriteLine("");
             foreach (VeiculoAluguel v in VeiculosAluguel)
             {
-                if (v.Tipo == "Carro")
+                if (v.Locadora == Locadora)
                 {
-                    string AlugadoCarro = "";
-                    if (v.Alugado) AlugadoCarro = "Alugado"; else AlugadoCarro = "Disponível";
-                    Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoCarro}");
+                    if (v.Tipo == "Carro")
+                    {
+                        string AlugadoCarro = "";
+                        if (v.Alugado) AlugadoCarro = "Alugado"; else AlugadoCarro = "Disponível";
+                        Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoCarro}");
+                    }
+                    if (v.Tipo == "Avião")
+                    {
+                        string AlugadoAvião = "";
+                        if (v.Alugado) AlugadoAvião = "Alugado"; else AlugadoAvião = "Disponível";
+                        Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoAvião}");
+                    }
                 }
-                if (v.Tipo == "Avião")
-                {
-                    string AlugadoAvião = "";
-                    if (v.Alugado) AlugadoAvião = "Alugado"; else AlugadoAvião = "Disponível";
-                    Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: {AlugadoAvião}");
-                }
-                
+
             }
         }
 
@@ -51,47 +55,53 @@ namespace ConsoleApp1
             Console.WriteLine("");
 
             foreach (VeiculoAluguel v in VeiculosAluguel)
-                    {
-                    if (v.Locadora == Locadora)
-                    {
-                        if (v.Tipo == "Carro")
-                        {
-                            if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
-                        }
-                        if (v.Tipo == "Avião")
-                        {
-                            if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
-                        }
-                    }
+            {
+               if (v.Locadora == Locadora)
+                {
+                   if (v.Tipo == "Carro")
+                   {
+                       if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                   }
+                   if (v.Tipo == "Avião")
+                   {
+                       if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                   }
+               }
 
-                    }               
+            }               
                    
         }
 
-        public static void ListarCarrosDisponiveis(Locadora loc)
+        public static void ListarCarrosDisponiveis(string Locadora)
         {
             Console.WriteLine("");
-            Console.WriteLine($"Carros disponíveis em: {loc.Nome}");
+            Console.WriteLine($"Carros disponíveis em: {Locadora}");
             Console.WriteLine("");
             foreach (VeiculoAluguel v in VeiculosAluguel)
             {
-                if (v.Tipo == "Carro")
+                if (v.Locadora == Locadora)
                 {
-                    if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                    if (v.Tipo == "Carro")
+                    {
+                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Placa: {v.Placa} | Quilometragem: {v.Quilometragem} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                    }
                 }
             }
         }
 
-        public static void ListarAviõesDisponiveis(Locadora loc)
+        public static void ListarAviõesDisponiveis(string Locadora)
         {
             Console.WriteLine("");
-            Console.WriteLine($"Aviões disponíveis em: {loc.Nome}");
+            Console.WriteLine($"Aviões disponíveis em: {Locadora}");
             Console.WriteLine("");
             foreach (VeiculoAluguel v in VeiculosAluguel)
             {
-                if (v.Tipo == "Avião")
+                if (v.Locadora == Locadora)
                 {
-                    if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                    if (v.Tipo == "Avião")
+                    {
+                        if (!v.Alugado) Console.WriteLine($"ID: {v.Id} | Tipo: {v.Tipo} | Horas de Voo: {v.Horasvoo} | Marca: {v.Marca} | Modelo: {v.Modelo} | Situação: Disponível");
+                    }
                 }
 
             }

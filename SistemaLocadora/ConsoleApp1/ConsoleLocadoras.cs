@@ -8,11 +8,15 @@ namespace ConsoleApp1
     class ConsoleLocadoras
     {
         public static string LocadoraSelecionada = "";
+        public static string ClienteSelecionado = "";
         public static void Main()
         {
             int c = 0;
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Centro", "Rua Guaporé 789"));
             RedeLocadoras.AdicionarLocadora(new Locadora("Locadora Yvete Dias", "Rua Yvete Dias da Silva 60"));
+            RedeLocadoras.Clientes.Add(new Cliente("Matheus Mazali Maeda", "113.888.779-02"));
+            RedeLocadoras.Clientes.Add(new Cliente("Pedro Ivo Bez Maroco", "090.749.739-06"));
+            RedeLocadoras.Clientes.Add(new Cliente("Caio Yoshinobu Higashi Trevisan Graciano", "066.513.619-61"));
             foreach (Locadora loc in RedeLocadoras.Locadoras)
             {
                 if(loc.Nome == "Locadora Centro")
@@ -52,18 +56,27 @@ namespace ConsoleApp1
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n " +
                 "      Sistema de Locadoras\n " +
                 "\n" +
+                $"Locadora selecionada: {LocadoraSelecionada}\n" +
+                $"Cliente selecionado: {ClienteSelecionado}\n" +
+                "     \n" +
                 "1 - Criar Locadora \n" +
                 "2 - Remover Locadora\n" +
                 "3 - Listar Locadoras\n" +
-                "4 - SelecionarLocadora\n" +
-                "5 - ListarVeiculosDisponiveis\n" +
-                "6 - ListarCarrosDisponíveis\n" +
-                "7 - ListarAviõesDisponíveis\n" +
-                "8 - ListarTodosOsVeiculo\n" +
-                "9 - CadastrarCliente\n" +
-                "10 - DevolverVeículo\n" +
-                "11 - Listar Alugueis\n" +
-                "12 - ListarAlugueisCliente\n" +
+                "4 - Selecionar Locadora\n" +
+                "\n" +
+                "5 - Listar Veiculos Disponiveis\n" +
+                "6 - Listar Carros Disponíveis\n" +
+                "7 - Listar Aviões Disponíveis\n" +
+                "8 - Listar Todos Os Veiculo\n" +
+                "\n" +
+                "9 - Cadastrar Cliente\n" +
+                "10 - Listar Clientes\n" +
+                "11 - Selecionar Cliente\n" +
+                "\n" +
+                "12 - Iniciar Aluguel" +
+                "13 - Devolver Veículo\n" +
+                "14 - Listar Alugueis\n" +
+                "15 - ListarAlugueisCliente\n" +
                 "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
             int op = int.Parse(Console.ReadLine());
@@ -95,12 +108,21 @@ namespace ConsoleApp1
                     ListarTodosOsVeiculos();
                     break;
                 case 9:
+                    CadastrarCliente();
                     break;
                 case 10:
+                    ListarClientes();
                     break;
                 case 11:
+                    SelecionarCliente();
                     break;
                 case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
                     break;
                 default:
                     break;
@@ -140,7 +162,6 @@ namespace ConsoleApp1
         {
             string LocadoraBackup = LocadoraSelecionada;
             LocadoraSelecionada = "";
-            Console.WriteLine("");
             RedeLocadoras.ListarLocadoras();
             Console.WriteLine(" \n" +
                 "Qual locadora voce desejar selecionar?");
@@ -179,58 +200,108 @@ namespace ConsoleApp1
         }
         public static void ListaAviõesDisponíveis()
         {
-            foreach (Locadora locadora in RedeLocadoras.Locadoras)
+            if (LocadoraSelecionada == "")
             {
-                if (LocadoraSelecionada == "")
-                {
-                    Console.WriteLine("Selecione uma locadora primeiro");
-                }
-                else
-                {
+                Console.WriteLine("Selecione uma locadora primeiro");
+            }
+            else
+            {
+                foreach (Locadora locadora in RedeLocadoras.Locadoras)
+            {
+
                     if (locadora.Nome == LocadoraSelecionada)
                     {
-                        Locadora.ListarAviõesDisponiveis(locadora);
+                        Locadora.ListarAviõesDisponiveis(LocadoraSelecionada);                        
                     }
                 }
             }
         }
         public static void ListarCarrosDisponíveis()
         {
-            foreach (Locadora locadora in RedeLocadoras.Locadoras)
+            if (LocadoraSelecionada == "")
             {
-                if (LocadoraSelecionada == "")
+                Console.WriteLine("Selecione uma locadora primeiro");
+            }
+            else
+            {
+                foreach (Locadora locadora in RedeLocadoras.Locadoras)
                 {
-                    Console.WriteLine("Selecione uma locadora primeiro");
-                }
-                else
-                {
+
                     if (locadora.Nome == LocadoraSelecionada)
                     {
-                        Locadora.ListarCarrosDisponiveis(locadora);
+                        Locadora.ListarCarrosDisponiveis(LocadoraSelecionada);
                     }
                 }
             }
         }
         public static void ListarTodosOsVeiculos()
         {
-
-            foreach (Locadora locadora in RedeLocadoras.Locadoras)
+            if (LocadoraSelecionada == "")
             {
-                if (LocadoraSelecionada == "")
+                Console.WriteLine("Selecione uma locadora primeiro");
+            }
+            else
+            {
+                foreach (Locadora locadora in RedeLocadoras.Locadoras)
                 {
-                    Console.WriteLine("Selecione uma locadora primeiro");
-                }
-                else
-                {
-                    if (locadora.Nome == LocadoraSelecionada)
-                    {
-                        Locadora.ListarTodosOsVeículos(LocadoraSelecionada);
-                    }
+                        if (locadora.Nome == LocadoraSelecionada)
+                        {
+                            Locadora.ListarTodosOsVeículos(LocadoraSelecionada);
+                        }
                 }
             }
         }
+            
+        
         public static void CadastrarCliente()
         {
+
+            Console.WriteLine(" \n" +
+                "Adicionando Cliente... \n" +
+                "Insira o nome do cliente: ");
+            string nomeCliente = Console.ReadLine();
+            Console.WriteLine($"Digite o cpf de {nomeCliente}: ");
+            string cpfCliente = Console.ReadLine();
+
+            RedeLocadoras.Clientes.Add(new Cliente(nomeCliente, cpfCliente));
+
+            Console.WriteLine($"Cliente {nomeCliente} foi adicionado com sucesso!!");
+
+        }
+        public static void ListarClientes()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Lista de todos os clientes cadastrados:");
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                Console.WriteLine($"Nome: {c.Nome} | CPF: {c.Cpf}");
+            }
+        }
+        public static void SelecionarCliente()
+        {
+
+            string ClienteBackup = ClienteSelecionado;
+            ClienteSelecionado = "";
+            ListarClientes();
+            Console.WriteLine(" \n" +
+            "Qual Cliente você deseja selecionar? ");
+            string Selecionar = Console.ReadLine();
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                if (c.Nome.Equals(Selecionar))
+                {
+                    ClienteSelecionado = c.Nome;
+                    Console.WriteLine($"{c.Nome} foi selecionado!");                 
+                }               
+
+            }
+            if (ClienteSelecionado == "")
+            {
+                Console.WriteLine($"{Selecionar} não foi encontrado na base de dados");
+                ClienteSelecionado = ClienteBackup;
+            }
+
+
 
         }
         public static void DevolverVeiculo()

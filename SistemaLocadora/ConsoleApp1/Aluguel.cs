@@ -6,6 +6,5 @@ namespace ConsoleApp1
 {
     class Aluguel
     {
-        
     }
 }

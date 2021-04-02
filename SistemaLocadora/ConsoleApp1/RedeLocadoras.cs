@@ -6,12 +6,12 @@ namespace ConsoleApp1
     class RedeLocadoras
     {
         private static string _nome;
-        private List<Cliente> _clientes = new List<Cliente>();
+        private static List<Cliente> _clientes = new List<Cliente>();
         private static List<Locadora> _locadoras = new List<Locadora>();
 
         public static string  Nome { get => _nome; set => _nome = value; }
         public static List<Locadora> Locadoras { get => _locadoras; private set => _locadoras = value; }
-        public List<Cliente> Clientes { get => _clientes; private set => _clientes = value; }
+        public static List<Cliente> Clientes { get => _clientes; private set => _clientes = value; }
 
         public static void AdicionarLocadora(Locadora loc)
         {
