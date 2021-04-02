@@ -8,7 +8,7 @@ namespace ConsoleApp1
     class ConsoleLocadoras
     {
         public static int IdCarros = 13;
-        public static string LocadoraSelecionada = "Locadora Centro";
+        public static string LocadoraSelecionada = "";
         public static string ClienteSelecionado = "";
         public static string VeiculoSelecionado = "";
         public static void Main()
@@ -454,24 +454,28 @@ namespace ConsoleApp1
             string selecionado = Console.ReadLine();
             int qnt = 0;
             bool encontrado = false;
-                    foreach(Aluguel a in Locadora.AlugueisAtuais)
-                    {
-                        if(a.Cliente.Equals(selecionado))
-                        {
-                                encontrado = true;
+            foreach (Cliente c in RedeLocadoras.Clientes)
+            {
+                if (c.Nome.Equals(selecionado))
+                {
+                    encontrado = true;
+                }
+            }
+            foreach (Aluguel a in Locadora.AlugueisAtuais)
+            {
+                if (a.Cliente.Equals(selecionado))
+                {
+                    encontrado = true;
                     Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n" +
                     $"Aluguel ID: {a.Id}\n" +
                     $"Alugado por: {a.Cliente}\n" +
-                    $"Locado por {a.Locadora}\n" +
                     $" \n" +
                     $"Inicio: {a.Inicio}\n" +
                     $"Devolução: {a.Final}\n" +
                     $"-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-                    qnt++; 
-                        }
-                    }
-                
-
+                    qnt++;
+                }
+            }
             if(encontrado == false)
             {
                 Console.WriteLine($"{selecionado} não foi encontrado na base de dados");
