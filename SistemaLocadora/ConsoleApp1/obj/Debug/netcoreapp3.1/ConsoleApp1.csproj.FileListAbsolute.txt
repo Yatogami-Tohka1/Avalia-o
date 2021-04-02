@@ -24,3 +24,16 @@ C:\Users\Pedro Ivo\Documents\ESTUDOS\SENAI\AVA 01\Avalia-o\SistemaLocadora\Conso
 C:\Users\Pedro Ivo\Documents\ESTUDOS\SENAI\AVA 01\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
 C:\Users\Pedro Ivo\Documents\ESTUDOS\SENAI\AVA 01\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
 C:\Users\Pedro Ivo\Documents\ESTUDOS\SENAI\AVA 01\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+E:\Avaliação\Avalia-o\SistemaLocadora\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
