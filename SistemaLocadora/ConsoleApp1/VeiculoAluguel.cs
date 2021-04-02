@@ -39,5 +39,6 @@ namespace ConsoleApp1
         public float Horasvoo { get => _horasvoo; set => _horasvoo = value; }
         public float Quilometragem { get => quilometragem; set => quilometragem = value; }
         public string Locadora { get => _locadora; set => _locadora = value; }
+
     }
 }
